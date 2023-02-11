@@ -1,8 +1,9 @@
 const youtubeVid = document.querySelector(".youtubeVid");
 const search = document.querySelector("#search");
 const video = document.getElementById("video")
+//const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-
+var allchar="0123456789ABCDEF"
 
 
  const submit = document.getElementById("submit")
@@ -23,9 +24,19 @@ console.log(data.items[0].id.videoId)
 const youtubeLink = "https://www.youtube.com/embed/" +videoAppear
 video.setAttribute("src", youtubeLink );
 
+ const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  color.innerHTML = "#" + randomColor;
+
 
 
 
 })
 }
+    // for(var i=0; i<6; i++){
+    //     randcolor += allchar[Math.floor(Math.random()*16)];  
+    //  }
+    //  document.body.style.backgroundColor= "#"+ randcolor;
+     
  submit.addEventListener("click", renderYoutube)
+ 
