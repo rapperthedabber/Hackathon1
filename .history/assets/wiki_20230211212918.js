@@ -18,20 +18,20 @@ async function fetchWikipedia(searchTerm) {
     var wikiLink = openSearchResponseJson[3][0];
     var wikiLinkArray = wikiLink.split("/");
     var wikiTerm = wikiLinkArray[wikiLinkArray.length - 1];
-    document.querySelector('#wiki-title').textContent = 'Wikipedia Article:';
-    var parseUrl = "https://en.wikipedia.org/w/api.php";
-    var params = {
-        action: "parse",
-        page: wikiTerm,
-        prop: "text",
-        formatversion: 2,
-        format: "json"
-    };
-    parseUrl = parseUrl + "?origin=*";
-    Object.keys(params).forEach(function(key) { parseUrl += "&" + key + "=" + params[key]; });
-    var parseResponse = await fetch(parseUrl);
-    var parseResponseJson = await parseResponse.json();
-    document.getElementById("wiki-article").innerHTML = parseResponseJson.parse.text;
+    document.querySelector('#wiki-title').textContent = 'Wikipedia Article:');
+var parseUrl = "https://en.wikipedia.org/w/api.php";
+var params = {
+    action: "parse",
+    page: wikiTerm,
+    prop: "text",
+    formatversion: 2,
+    format: "json"
+};
+parseUrl = parseUrl + "?origin=*";
+Object.keys(params).forEach(function(key) { parseUrl += "&" + key + "=" + params[key]; });
+var parseResponse = await fetch(parseUrl);
+var parseResponseJson = await parseResponse.json();
+document.getElementById("wiki-article").innerHTML = parseResponseJson.parse.text;
 }
 
 function callWikiAPI() {

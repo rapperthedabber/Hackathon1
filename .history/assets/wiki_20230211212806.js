@@ -18,7 +18,7 @@ async function fetchWikipedia(searchTerm) {
     var wikiLink = openSearchResponseJson[3][0];
     var wikiLinkArray = wikiLink.split("/");
     var wikiTerm = wikiLinkArray[wikiLinkArray.length - 1];
-    document.querySelector('#wiki-title').textContent = 'Wikipedia Article:';
+    document.querySelector('#wiki-title').text('Wikipedia Article:');
     var parseUrl = "https://en.wikipedia.org/w/api.php";
     var params = {
         action: "parse",

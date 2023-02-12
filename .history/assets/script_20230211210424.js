@@ -13,12 +13,12 @@ const submit = document.getElementById("submit")
 function renderYoutube() {
     const maxResults = 1;
 
-    const key = "AIzaSyB8dYCd7FoP_qVXiLp7KWhTDRsvLsN3Nhk"
-    const url = "https://www.googleapis.com/youtube/v3/earch?key=" + key + "&type=video&part=snippet&maxResults=$" + maxResults + "&q=$" + search
+    const key = "6EF5zwdj96MyqO5ECCd5ZbxsPLnZSH3ZETcJ1mKczpRdz6wtZ7KkCO+lP8on28On7vJIrfBo69vUsBFo27Dlr7GNN1/I2EEnMErljj7M8TiMU1f99Opg5iYMXQuUFVUL"
+    const url = "https://api.vimeo.com/oauth/" + key
     fetch(url).then(res => res.json()).then(data => {
         console.log(data)
-        var videoAppear = data.items[0].id.videoId
-        console.log(data.items[0].id.videoId)
+            //var videoAppear = data.items[0].id.videoId
+            //console.log(data.items[0].id.videoId)
             //const youtubeLink = "https://www.youtube.com/watch?v=" + data.items[0].id.videoId
         const youtubeLink = "https://www.youtube.com/embed/" + videoAppear
         video.setAttribute("src", youtubeLink);

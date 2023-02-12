@@ -18,7 +18,7 @@ async function fetchWikipedia(searchTerm) {
     var wikiLink = openSearchResponseJson[3][0];
     var wikiLinkArray = wikiLink.split("/");
     var wikiTerm = wikiLinkArray[wikiLinkArray.length - 1];
-    document.querySelector('#wiki-title').textContent = 'Wikipedia Article:';
+    $('#wiki-title').text('Wikipedia Article:');
     var parseUrl = "https://en.wikipedia.org/w/api.php";
     var params = {
         action: "parse",
@@ -35,11 +35,11 @@ async function fetchWikipedia(searchTerm) {
 }
 
 function callWikiAPI() {
-    var searchTerm = search.value;
+    var searchTerm = search.val();
     fetchWikipedia(searchTerm);
 }
 //calling API when you click submit 
-submit.addEventListener("click", function(event) {
+submit.click(function(event) {
     event.preventDefault();
     callWikiAPI();
 })
